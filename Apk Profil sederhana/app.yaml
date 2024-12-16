@@ -1,0 +1,13 @@
+runtime: python39
+service: default
+env: standard
+handlers:
+- url: /static
+  static_dir: static
+
+- url: /(.*\.(gif|png|jpg|jpeg|css|js|ico|txt|html))
+  static_files: \1
+  upload: .*\.(gif|png|jpg|jpeg|css|js|ico|txt|html)
+
+- url: /.*
+  script: auto
